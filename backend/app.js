@@ -18,6 +18,13 @@ app.use(
     credentials: true
 }));
 
+app.get("/", (req, res, next) => {
+    return res.status(200).json({
+        success: true,
+        message: "Backend deployed successfully"
+    })
+})
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1/reservation', reservationRouter)
