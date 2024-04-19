@@ -34,4 +34,8 @@ dbConnection();
 
 app.use(errorMiddleware)
 
+app.listen(process.env.PORT, () =>{
+    console.log(`Server running on Port ${process.env.PORT || 3000}`);
+})
+
 export default app
